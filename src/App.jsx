@@ -2,6 +2,7 @@ import React from "react";
 import {
   Typography,
   AppBar,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -13,8 +14,12 @@ import {
 } from "@mui/material";
 
 import CameraIcon from "@mui/icons-material/PhotoCamera";
+import { ThemeProvider } from "@mui/material/styles";
+
+const theme = ThemeProvider((theme) => ({}));
 
 const App = () => {
+  const classes = theme();
   return (
     <>
       <CssBaseline />
@@ -25,7 +30,7 @@ const App = () => {
         </Toolbar>
       </AppBar>
       <main>
-        <div>
+        <div className={classes.container}>
           <Container maxWidth="sm">
             <Typography
               variant="h2"
@@ -45,6 +50,20 @@ const App = () => {
               sentences as long as possible so we can see how does it look like
               on the screen
             </Typography>
+            <div>
+              <Grid container spacing={3} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    See my Photos
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Secondary Action
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
           </Container>
         </div>
       </main>
