@@ -14,9 +14,14 @@ import {
 } from "@mui/material";
 
 import CameraIcon from "@mui/icons-material/PhotoCamera";
-import { ThemeProvider } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
-const theme = ThemeProvider((theme) => ({}));
+const theme = createTheme({
+  container: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+});
 
 const App = () => {
   const classes = theme();
